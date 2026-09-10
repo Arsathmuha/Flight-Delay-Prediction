@@ -1,0 +1,22 @@
+node_modules/
+frontend/node_modules/
+frontend/build/
+__pycache__/
+*.pyc
+.env
+extracted_data/
+data/flights.csv
+data/
+.DS_Store
+Screenshot*.png
+*.zip
+desktop.ini
+
+.vercel
+
+# Generated docs/presentation files
+*.pdf
+*.pptx
+generate_*.py
+slide_bg_*.png
+template_page_*.png

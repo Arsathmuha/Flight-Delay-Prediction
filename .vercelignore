@@ -1,0 +1,16 @@
+frontend
+data
+extracted_data
+notebooks
+*.zip
+__pycache__
+.git
+desktop.ini
+node_modules
+create_ppt.py
+*.pptx
+Procfile
+run.sh
+start.bat
+backend/__pycache__
+backend/train_model.py
