@@ -1,0 +1,64 @@
+.model-metrics { display: flex; flex-direction: column; gap: 24px; }
+.metrics-sub { color: var(--text-muted); font-size: 0.82rem; margin-top: -10px; }
+
+.metrics-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+
+.metric-card {
+  text-align: center; padding: 18px 12px;
+  position: relative; overflow: hidden;
+}
+.metric-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: var(--gradient-main); opacity: 0.5;
+}
+
+.metric-label { font-size: 0.65rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.metric-value { font-size: 1.7rem; font-weight: 800; font-family: 'JetBrains Mono', monospace; margin: 5px 0; color: var(--accent-blue); }
+.metric-bar { height: 4px; background: rgba(14, 165, 233, 0.1); border-radius: 2px; overflow: hidden; margin-top: 6px; }
+.metric-bar-fill { height: 100%; border-radius: 2px; transition: width 1.2s ease; box-shadow: 0 0 6px currentColor; }
+
+.metrics-body { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.cm-card h3, .feat-card h3 { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; }
+.cm-note { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 14px; }
+
+.cm-grid { display: grid; grid-template-columns: auto 1fr 1fr; gap: 5px; padding: 6px 0; }
+.cm-corner { width: 85px; }
+.cm-head { font-size: 0.6rem; font-weight: 600; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 0.04em; text-align: center; padding: 5px; }
+.cm-side { font-size: 0.6rem; font-weight: 600; color: var(--accent-blue); text-transform: uppercase; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; width: 85px; }
+
+.cm-cell { padding: 14px 8px; border-radius: 10px; text-align: center; display: flex; flex-direction: column; gap: 2px; transition: all 0.2s; }
+.cm-cell:hover { transform: scale(1.05); box-shadow: var(--shadow-glow); }
+.cm-cell.tn { background: rgba(14, 165, 233, 0.06); border: 1px solid rgba(14, 165, 233, 0.15); }
+.cm-cell.fp { background: rgba(245, 158, 11, 0.06); border: 1px solid rgba(245, 158, 11, 0.15); }
+.cm-cell.fn { background: rgba(239, 68, 68, 0.06); border: 1px solid rgba(239, 68, 68, 0.15); }
+.cm-cell.tp { background: rgba(16, 185, 129, 0.06); border: 1px solid rgba(16, 185, 129, 0.15); }
+.cm-val { font-family: 'JetBrains Mono', monospace; font-size: 1.1rem; font-weight: 700; }
+.cm-pct { font-size: 0.62rem; color: var(--text-muted); }
+
+.stats-section { border-top: 1px solid var(--border); padding-top: 20px; }
+.stats-section h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 14px; }
+.stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-bottom: 20px; }
+
+.stat-item {
+  display: flex; flex-direction: column; gap: 2px; text-align: center;
+  padding: 14px 8px; background: rgba(14, 165, 233, 0.03);
+  border-radius: 10px; border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.stat-item:hover { transform: translateY(-3px); border-color: var(--border-glow); box-shadow: var(--shadow-glow); }
+.stat-num { font-family: 'JetBrains Mono', monospace; font-size: 1.2rem; font-weight: 700; color: var(--accent-blue); }
+.stat-desc { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+
+.causes-section h4 { font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 10px; }
+.causes-list { display: flex; flex-direction: column; gap: 7px; }
+.cause-item { display: grid; grid-template-columns: 110px 1fr 45px; align-items: center; gap: 10px; }
+.cause-name { font-size: 0.73rem; color: var(--text-secondary); font-weight: 500; text-transform: capitalize; }
+.cause-bar-wrap { height: 5px; background: rgba(14, 165, 233, 0.08); border-radius: 3px; overflow: hidden; }
+.cause-bar { height: 100%; background: var(--gradient-main); border-radius: 3px; transition: width 0.8s ease; }
+.cause-val { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; font-weight: 600; text-align: right; }
+
+@media (max-width: 768px) {
+  .metrics-body { grid-template-columns: 1fr; }
+  .metrics-cards { grid-template-columns: repeat(2, 1fr); }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+}

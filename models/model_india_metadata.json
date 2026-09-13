@@ -1,0 +1,58 @@
+{
+  "model_type": "XGBoost Binary Classifier",
+  "dataset": "Indian Domestic Flights (Synthetic - DGCA patterns)",
+  "n_samples": 60000,
+  "n_features": 10,
+  "feature_names": [
+    "carrier",
+    "origin",
+    "dest",
+    "dep_hour",
+    "day_of_week",
+    "month",
+    "aircraft_leg_number",
+    "cumulative_fatigue_min",
+    "turnaround_time_min",
+    "prior_leg_delay"
+  ],
+  "metrics": {
+    "accuracy": 0.7171,
+    "auc_roc": 0.7988,
+    "precision": 0.6366,
+    "recall": 0.6939,
+    "f1_score": 0.664
+  },
+  "carriers": [
+    "6E",
+    "AI",
+    "G8",
+    "I5",
+    "IX",
+    "QP",
+    "SG",
+    "UK"
+  ],
+  "airports": [
+    "AMD",
+    "BBI",
+    "BLR",
+    "BOM",
+    "CCU",
+    "COK",
+    "DEL",
+    "GAU",
+    "GOI",
+    "HYD",
+    "IXC",
+    "IXR",
+    "JAI",
+    "LKO",
+    "MAA",
+    "PAT",
+    "PNQ",
+    "SXR",
+    "TRV",
+    "VNS"
+  ],
+  "best_iteration": 86
+}

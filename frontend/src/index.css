@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap');
+
+:root {
+  /* Aviation white & blue palette */
+  --bg-primary: #f0f7ff;
+  --bg-secondary: #e3f0fc;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-solid: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.7);
+  --border: rgba(14, 116, 197, 0.12);
+  --border-glow: rgba(14, 116, 197, 0.3);
+  --border-light: rgba(148, 187, 233, 0.4);
+  --text-primary: #0c1e3a;
+  --text-secondary: #3d5a80;
+  --text-muted: #6b8cae;
+  --accent-blue: #0369a1;
+  --accent-sky: #0ea5e9;
+  --accent-cyan: #06b6d4;
+  --accent-purple: #6366f1;
+  --accent-green: #10b981;
+  --accent-amber: #f59e0b;
+  --accent-red: #ef4444;
+  --accent-pink: #ec4899;
+  --neon-blue: #0284c7;
+  --neon-purple: #7c3aed;
+  --neon-cyan: #0891b2;
+  --gradient-main: linear-gradient(135deg, #0369a1, #0ea5e9, #38bdf8);
+  --gradient-card: linear-gradient(135deg, rgba(14, 165, 233, 0.06), rgba(56, 189, 248, 0.03));
+  --gradient-glow: linear-gradient(135deg, rgba(3, 105, 161, 0.04), rgba(14, 165, 233, 0.02));
+  --shadow-neon: 0 0 20px rgba(14, 165, 233, 0.15), 0 0 60px rgba(14, 165, 233, 0.05);
+  --shadow-card: 0 4px 24px rgba(14, 116, 197, 0.08), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-glow: 0 0 30px rgba(14, 165, 233, 0.12);
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Sky gradient background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 30% 10%, rgba(56, 189, 248, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 70% 80%, rgba(14, 165, 233, 0.07), transparent),
+    radial-gradient(ellipse 90% 60% at 50% 30%, rgba(186, 230, 253, 0.2), transparent),
+    linear-gradient(180deg, #eef8ff 0%, #f0f7ff 40%, #fafeff 100%);
+  pointer-events: none;
+  z-index: 0;
+  animation: skyShift 25s ease-in-out infinite alternate;
+}
+
+@keyframes skyShift {
+  0% { opacity: 1; }
+  50% { opacity: 0.85; }
+  100% { opacity: 1; }
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: rgba(14, 165, 233, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-sky); }
+
+/* ========== KEYFRAMES ========== */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(14, 165, 233, 0.2), 0 0 20px rgba(14, 165, 233, 0.08); }
+  50% { box-shadow: 0 0 10px rgba(14, 165, 233, 0.4), 0 0 40px rgba(14, 165, 233, 0.15); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.95); }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes flyPlane {
+  0% { left: -80px; transform: translateY(0) rotate(-8deg); }
+  25% { transform: translateY(-12px) rotate(-5deg); }
+  50% { transform: translateY(4px) rotate(-10deg); }
+  75% { transform: translateY(-8px) rotate(-6deg); }
+  100% { left: calc(100% + 80px); transform: translateY(0) rotate(-8deg); }
+}
+
+@keyframes driftCloud {
+  0% { left: -250px; opacity: 0; }
+  5% { opacity: 1; }
+  95% { opacity: 1; }
+  100% { left: calc(100% + 250px); opacity: 0; }
+}
+
+@keyframes expandRing {
+  0% { width: 20px; height: 20px; opacity: 0.8; }
+  100% { width: 100px; height: 100px; opacity: 0; }
+}
+
+@keyframes radarSweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(14, 165, 233, 0.15); }
+  50% { border-color: rgba(14, 165, 233, 0.4); }
+}
+
+@keyframes trailDash {
+  to { stroke-dashoffset: -20; }
+}
+
+/* New flight-themed animations */
+@keyframes cloudDrift {
+  0% { transform: translateX(-100%) translateY(0); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateX(100vw) translateY(-20px); opacity: 0; }
+}
+
+@keyframes takeoff {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateX(200px) translateY(-100px) rotate(-15deg); opacity: 0; }
+}
+
+@keyframes turbulence {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  20% { transform: translateY(-3px) rotate(0.5deg); }
+  40% { transform: translateY(2px) rotate(-0.3deg); }
+  60% { transform: translateY(-2px) rotate(0.2deg); }
+  80% { transform: translateY(1px) rotate(-0.1deg); }
+}
+
+@keyframes altitudeGauge {
+  0%, 100% { height: 60%; }
+  25% { height: 75%; }
+  50% { height: 85%; }
+  75% { height: 70%; }
+}
+
+@keyframes radarPing {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+@keyframes contrail {
+  0% { width: 0; opacity: 0; }
+  20% { opacity: 0.7; }
+  100% { width: 120px; opacity: 0; }
+}
+
+@keyframes wingLight {
+  0%, 48%, 52%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+@keyframes boardingPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(14, 165, 233, 0); }
+}

@@ -1,0 +1,62 @@
+{
+  "auc_roc": 0.9053,
+  "accuracy": 0.9196,
+  "precision": 0.9288,
+  "recall": 0.6323,
+  "f1_score": 0.7524,
+  "confusion_matrix": {
+    "tn": 72910,
+    "fp": 856,
+    "fn": 6495,
+    "tp": 11168
+  },
+  "feature_importance": {
+    "PRIOR_LEG_DELAY": 0.8071,
+    "TAXI_OUT": 0.0548,
+    "TIME_SINCE_LAST_FLIGHT": 0.0167,
+    "DEP_HOUR_SIN": 0.0126,
+    "LEG_NUMBER_NORM": 0.0114,
+    "DISTANCE": 0.0109,
+    "REFUEL_TIME_MIN": 0.0083,
+    "FUEL_LOAD_FACTOR": 0.008,
+    "DEP_HOUR": 0.007,
+    "IS_EVENING": 0.0067,
+    "MONTH_COS": 0.0051,
+    "ORIGIN_CONGESTION": 0.0047,
+    "IS_WINTER": 0.0046,
+    "AIRLINE_ENC": 0.0045,
+    "DEST_CONGESTION": 0.004,
+    "MONTH_SIN": 0.004,
+    "IS_SUMMER": 0.0039,
+    "ROUTE_CONGESTION": 0.0037,
+    "ORIGIN_ENC": 0.0037,
+    "MONTH": 0.0035,
+    "IS_WEEKEND": 0.0032,
+    "DAY_OF_WEEK": 0.003,
+    "CUMULATIVE_FATIGUE_NORM": 0.003,
+    "DEST_ENC": 0.003,
+    "DEP_HOUR_COS": 0.0026
+  },
+  "novel_features": {
+    "fuel_load_factor": {
+      "description": "Estimated fuel load normalized (higher = longer refuel = more gate delay risk)",
+      "importance_rank": 8
+    },
+    "aircraft_utilization": {
+      "description": "Which leg of the day the aircraft is on (higher = more fatigue/mechanical risk)",
+      "importance_rank": 5
+    },
+    "cumulative_fatigue": {
+      "description": "Total accumulated air time for aircraft today before this flight",
+      "importance_rank": 23
+    }
+  },
+  "dataset": {
+    "source": "US DOT Bureau of Transportation Statistics (BTS) 2015",
+    "total_flights": 457144,
+    "delay_rate": 0.1932,
+    "training_samples": 365715,
+    "test_samples": 91429,
+    "features_count": 25
+  }
+}

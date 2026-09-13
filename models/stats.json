@@ -1,0 +1,26 @@
+{
+  "total_flights_analyzed": 500000,
+  "delay_rate": 20.5,
+  "avg_delay_minutes": 33.1,
+  "top_delay_causes": {
+    "Late Aircraft (Cascade)": 22.8,
+    "Airline Operations": 18.1,
+    "Air System (ATC)": 13.5,
+    "Weather": 3.4,
+    "Security": 0.1
+  },
+  "busiest_airports": {
+    "ATL": 32040,
+    "DFW": 24849,
+    "ORD": 23651,
+    "LAX": 18767,
+    "DEN": 18373,
+    "IAH": 14547,
+    "PHX": 14277,
+    "SFO": 13822,
+    "LAS": 12665,
+    "MCO": 10788
+  },
+  "carriers_analyzed": 14,
+  "routes_analyzed": 4175
+}
